@@ -7,15 +7,15 @@ import java.util.Random;
 
 public class PlayGame {
 
-    private List<String> words = new ArrayList<>(Arrays.asList("cat","car", "fork","honey"));
+    private List<String> words = new ArrayList<>(Arrays.asList("cat","cary", "forks","honeyy"));
         private Random random = new Random();
 
 
     public String wordToGuess (){
         var word = random.nextInt(words.size());
-      //  System.out.println("word to guess is" + words.get(word));
         return words.get(word);
 
     }
+
 
 }
