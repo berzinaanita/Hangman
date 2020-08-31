@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        var Visual = new Visual("Hangman");
+        Visual.start();
 
 
         GameField.startNewGame();
