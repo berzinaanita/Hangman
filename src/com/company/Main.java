@@ -12,16 +12,17 @@ public class Main {
 
         GameField.startNewGame();
 
-        System.out.println(" Plesase enter letter:");
+        System.out.println(" Please enter letter:");
         Scanner input = new Scanner(System.in);
         System.out.println();
         var guess = input.next();
+//
+//        Visual userInput = new Visual(Visual.getUserInput().toString());
+//        var guess = userInput.getUserInput();
+//
+//        GameField.playGame(guess.toString());
 
         GameField.playGame(guess);
-
-
-
-
 
 
     }
