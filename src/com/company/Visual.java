@@ -7,17 +7,19 @@ public class Visual extends JFrame {
 
     private JPanel mainPanel;
     private JPanel wordPanel;
-    private JPanel userInputPanel;
     private JPanel picturePanel;
-    private JPanel usedLettersPanel;
+    private JLabel usedLettersPanel;
     private JPanel textUsedLettersPanel;
     private JTextField userInput;
     private JButton btnEnter;
+    GameField field = new GameField();
+
+    public JTextField getUserInput() {
+        return userInput;
+    }
 
     public Visual(String title) throws HeadlessException {
         super(title);
-
-        this.mainPanel = mainPanel;
 
         this.setSize(400, 440);
         this.setResizable(false);
@@ -45,42 +47,48 @@ public class Visual extends JFrame {
         picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\StartPicture.PNG")));
         picturePanel.setBounds(200, 0, 200, 200);
 
-        /* if(){
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture1.PNG")));
-        }else if(){
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture2.PNG")));
-        }else if(){
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture3.PNG")));
-        }else if(){
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture4.PNG")));
-        }else if(){
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture5.PNG")));
-        }else if(){
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture6.PNG")));
-        }else{
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\GameOver.PNG")));
-         */
+        var wrongGuesses = field.getWrongGuesses();
+
+        switch (wrongGuesses) {
+            case 1:
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture1.PNG")));
+            case 2:
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture2.PNG")));
+            case 3:
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture3.PNG")));
+            case 4:
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture4.PNG")));
+            case 5:
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture5.PNG")));
+            case 6:
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture6.PNG")));
+            case 7:
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\GameOver.PNG")));
+        }
 
 
         userInput = new JTextField();
         userInput.setBounds(0, 200, 200, 100);
 
         textUsedLettersPanel = new JPanel();
-        textUsedLettersPanel.setBackground(Color.WHITE);
+
 
         JLabel usedLetters = new JLabel("Used letters:");
         textUsedLettersPanel.add(usedLetters); // kā uztaisīt lielākus un vidū?
         textUsedLettersPanel.setBounds(200, 200, 200, 100);
 
-
         btnEnter = new JButton("Try this letter");
         btnEnter.setBounds(0, 300, 200, 100);
 
-        usedLettersPanel = new JPanel();
-        usedLettersPanel.setBackground(Color.BLUE);
+        usedLettersPanel = new JLabel();
         usedLettersPanel.setBounds(200, 300, 200, 100);
 
-        //pievieno izmantotos burtus
+        var letters = field.getUsedLetters().toString();
+
+        JLabel arrayOfUsedLetters = new JLabel(letters);
+
+        usedLettersPanel.add(arrayOfUsedLetters); // vai šis list papildinās kaut kādā brīdī?
+
 
         mainPanel.add(wordPanel);
         mainPanel.add(picturePanel);

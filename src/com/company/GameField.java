@@ -8,6 +8,11 @@ public class GameField {
 
     private List<Character> usedLetters = new ArrayList<>();
     private PlayGame game = new PlayGame();
+
+    public int getWrongGuesses() {
+        return wrongGuesses;
+    }
+
     private int wrongGuesses = 0;
     //private String word = game.newRandomWord;
     private String wordToDisplay = game.getWordToDisplay();
