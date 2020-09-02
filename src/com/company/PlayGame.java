@@ -12,16 +12,17 @@ public class PlayGame {
         public String newRandomWord = wordToGuess();
 
 
-    public String wordToGuess (){
-        var word = random.nextInt(words.size());
-        return words.get(word);
 
+        public String getNewRandomWord() {
+        return newRandomWord;
     }
 
-    public String getWordToDisplay() {
-        var wordDisplay = new String(new char[newRandomWord.length()]).replace("\0", "_");
 
-        return wordDisplay;
+    public String wordToGuess (){
+        var word = random.nextInt(words.size());
+
+        return words.get(word);
+
     }
 
 
