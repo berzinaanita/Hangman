@@ -83,11 +83,11 @@ public class Visual extends JFrame {
         usedLettersPanel = new JLabel();
         usedLettersPanel.setBounds(200, 300, 200, 100);
 
-        var letters = field.getUsedLetters().toString();
+//        var letters = field.getUsedLetters().toString();
 
-        JLabel arrayOfUsedLetters = new JLabel(letters);
+//        JLabel arrayOfUsedLetters = new JLabel(letters);
 
-        usedLettersPanel.add(arrayOfUsedLetters); // vai šis list papildinās kaut kādā brīdī?
+//        usedLettersPanel.add(arrayOfUsedLetters); // vai šis list papildinās kaut kādā brīdī?
 
 
         mainPanel.add(wordPanel);
