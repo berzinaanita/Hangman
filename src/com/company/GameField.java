@@ -73,8 +73,8 @@ public class GameField {
 
 
                 if(wrongGuesses == Main.MaxLives){
-                    System.out.println("Game over!");
-                    System.out.println(" Do you want to play another game? (Y/N)");
+                    System.out.println("Game over!  You lost!");
+                   // System.out.println(" Do you want to play another game? (Y/N)");
 
                     //parādās Game over, bet cikls neapstājas.
                     //return;
@@ -88,12 +88,18 @@ public class GameField {
 
         if (wordToDisplay.equals(wordToGuess)) {
             System.out.println("Game won, you guess word:" + wordToGuess);
+            wrongGuesses = 7;
         } else {
             System.out.println(newWord);
         }
 
         usedLetters.add(guess.charAt(0));
         System.out.println(" You have used letters:" + usedLetters);
+
+    }
+
+    public int checkWrongGuesses (int wrongGuesses) {
+        return wrongGuesses;
 
     }
 

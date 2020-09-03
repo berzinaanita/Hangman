@@ -51,19 +51,19 @@ public class Visual extends JFrame {
 
         switch (wrongGuesses) {
             case 1:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture1.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture1.PNG")));
             case 2:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture2.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture2.PNG")));
             case 3:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture3.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture3.PNG")));
             case 4:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture4.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture4.PNG")));
             case 5:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture5.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture5.PNG")));
             case 6:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture6.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture6.PNG")));
             case 7:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\GameOver.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\GameOver.PNG")));
         }
 
 

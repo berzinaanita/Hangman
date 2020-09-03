@@ -9,20 +9,46 @@ public  class Main {
 
     public static void main(String[] args) {
 
-        GameField newGame = GameField.startNewGame();
-        int wrongGuesses = newGame.getWrongGuesses();
+
+        boolean game = true;
 
 
-        while (wrongGuesses < MaxLives){ // cikls atkārtojas kamēr nav sasniegts max dzīvību skaits
+        while (game) {
 
-            System.out.println(" Please enter letter:");
+            GameField newGame = GameField.startNewGame();
+            int wrongGuesses = newGame.getWrongGuesses();
             Scanner input = new Scanner(System.in);
-            System.out.println();
-            var guess = input.next();
-
-            GameField.playGame(guess, newGame);
 
 
+            while (wrongGuesses < MaxLives) { // cikls atkārtojas kamēr nav sasniegts max dzīvību skaits
+
+                System.out.println(" Please enter letter:");
+                System.out.println();
+                var guess = input.next();
+
+                GameField.playGame(guess, newGame);
+                wrongGuesses = newGame.getWrongGuesses();
+
+
+            }
+
+            System.out.println(" Do you want to play new game? (Y/N)");
+            String continueGame = input.next().toUpperCase();
+
+            System.out.println(continueGame);
+
+            if (continueGame.equals("Y")) {
+             continue;
+
+            } else  /*(continueGame.equals("N"))*/ {
+                break;
+
+            }
+
+/*            }else {
+                System.out.println(" Wrong command, game finished");
+                break;
+            }*/
 
         }
 
