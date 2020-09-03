@@ -29,7 +29,7 @@ public class Visual extends JFrame {
 
     public void start() {
         init();
-        this.setVisible(true);
+        this.setVisible(false);
     }
 
 
@@ -44,7 +44,7 @@ public class Visual extends JFrame {
 
         picturePanel = new JPanel();
         picturePanel.setBackground(Color.WHITE);
-        picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\StartPicture.PNG")));
+        picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\StartPicture.PNG")));
         picturePanel.setBounds(200, 0, 200, 200);
 
         var wrongGuesses = field.getWrongGuesses();

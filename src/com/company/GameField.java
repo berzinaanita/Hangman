@@ -54,6 +54,9 @@ public class GameField {
 
                 if (wordToGuess.charAt(i) == guess.charAt(0)) {
                     newWord += guess.charAt(0);
+                    System.out.println();
+                    System.out.println( "You guess letter " + guess);
+                    System.out.println();
 
             } else if ( wordToDisplay.charAt(i) != '_'){
                 newWord += wordToGuess.charAt(i);
@@ -68,7 +71,7 @@ public class GameField {
 
             if (!convertWordToGuessToList().contains(guess.charAt(0))) {
                 ++wrongGuesses;
-                System.out.println(" You have made " + wrongGuesses +
+                System.out.println("You have made " + wrongGuesses +
                         " wrong guesses, guesses left: " + (Main.MaxLives - wrongGuesses));
 
 
@@ -94,7 +97,10 @@ public class GameField {
         }
 
         usedLetters.add(guess.charAt(0));
-        System.out.println(" You have used letters:" + usedLetters);
+        System.out.println();
+
+        System.out.println("You have used letters:" + usedLetters);
+        System.out.println();
 
     }
 
