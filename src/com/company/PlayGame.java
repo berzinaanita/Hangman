@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class PlayGame {
 
-    private List<String> words = new ArrayList<>(Arrays.asList("cat","cary", "farks","haneyy"));
+    private List<String> words = new ArrayList<>(Arrays.asList("CAR","CAT", "AUTUMN", "CANDLE", "CLOUDS", "WORLD", "SCRUM", "AGILE" ));
         private Random random = new Random();
         public String newRandomWord = wordToGuess();
 

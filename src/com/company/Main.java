@@ -11,6 +11,7 @@ public  class Main {
 
 
         boolean game = true;
+
         var Visual = new Visual("Hangman");
         Visual.start();
 
@@ -24,22 +25,18 @@ public  class Main {
             Scanner input = new Scanner(System.in);
 
 
-            while (wrongGuesses < MaxLives) { // cikls atkārtojas kamēr nav sasniegts max dzīvību skaits
+            while (wrongGuesses < MaxLives) {
 
                 System.out.println("Please enter letter:");
                 System.out.println();
-                var guess = input.next();
+                var guess = input.next().toUpperCase();
 
                 GameField.playGame(guess, newGame);
                 wrongGuesses = newGame.getWrongGuesses();
-
-
             }
 
             System.out.println("Do you want to play new game? (Y/N)");
             String continueGame = input.next().toUpperCase();
-
-
 
             if (continueGame.equals("Y")) {
              continue;

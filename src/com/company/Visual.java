@@ -2,6 +2,8 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Visual extends JFrame {
 
@@ -39,7 +41,14 @@ public class Visual extends JFrame {
 
 
         wordPanel = new JPanel();
-        wordPanel.setBackground(Color.GRAY);
+        var wordToGuess = field.getWordToGuess();
+
+        JLabel letterPlaceHolder = new JLabel(field.getWordToDisplay(wordToGuess));
+
+        letterPlaceHolder.setFont(new Font("", Font.PLAIN, 40));
+        wordPanel.add(letterPlaceHolder);
+
+        wordPanel.setBackground(Color.WHITE);
         wordPanel.setBounds(0, 0, 200, 200);
 
         picturePanel = new JPanel();
@@ -51,19 +60,19 @@ public class Visual extends JFrame {
 
         switch (wrongGuesses) {
             case 1:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture1.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture1.PNG")));
             case 2:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture2.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture2.PNG")));
             case 3:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture3.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture3.PNG")));
             case 4:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture4.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture4.PNG")));
             case 5:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture5.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture5.PNG")));
             case 6:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\Picture6.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\Picture6.PNG")));
             case 7:
-                picturePanel.add(new JLabel(new ImageIcon("C:\\Users\\baiba\\Downloads\\GameOver.PNG")));
+                picturePanel.add(new JLabel(new ImageIcon("C:\\Temp\\GameOver.PNG")));
         }
 
 
@@ -74,17 +83,24 @@ public class Visual extends JFrame {
 
 
         JLabel usedLetters = new JLabel("Used letters:");
+        usedLetters.setFont(new Font("", Font.PLAIN, 20));
         textUsedLettersPanel.add(usedLetters); // kā uztaisīt lielākus un vidū?
         textUsedLettersPanel.setBounds(200, 200, 200, 100);
 
         btnEnter = new JButton("Try this letter");
+        btnEnter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String getValue = userInput.getText();
+            }
+        });
         btnEnter.setBounds(0, 300, 200, 100);
 
         usedLettersPanel = new JLabel();
         usedLettersPanel.setBounds(200, 300, 200, 100);
 
 //        var letters = field.getUsedLetters().toString();
-
+//
 //        JLabel arrayOfUsedLetters = new JLabel(letters);
 
 //        usedLettersPanel.add(arrayOfUsedLetters); // vai šis list papildinās kaut kādā brīdī?

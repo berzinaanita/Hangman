@@ -11,6 +11,11 @@ public class GameField {
     private List<Character> usedLetters = new ArrayList<>();
     private PlayGame game = new PlayGame();
     private int wrongGuesses = 0;
+
+    public String getWordToGuess() {
+        return wordToGuess;
+    }
+
     private String wordToGuess = game.getNewRandomWord();
     private String wordToDisplay = getWordToDisplay(wordToGuess);
 
