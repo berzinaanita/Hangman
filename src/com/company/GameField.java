@@ -15,8 +15,6 @@ public class GameField {
     private String wordToDisplay = getWordToDisplay(wordToGuess);
     private int guessedLetters = 0;
 
-    //private  String wordGuess = game.wordToGuess();
-    //private String word = game.newRandomWord;
 
     public int getWrongGuesses() {
         return wrongGuesses;
@@ -29,9 +27,7 @@ public class GameField {
         return wordDisplay;
     }
 
-    public void setUsedLetters(List<Character> usedLetters) {
-        this.usedLetters = usedLetters;
-    }
+
 
     public static GameField startNewGame() {
         GameField field = new GameField();
@@ -46,28 +42,41 @@ public class GameField {
  //     while (wrongGuesses <= Main.MaxLives) {
         var newWord = "";
 
+        for (var letter:usedLetters ) {
+            if (letter == guess.charAt(0)){
+                System.out.println("This letter has already been used, try again: ");
+                return;
+            }
+
+        }
 
             for (int i = 0; i < wordToGuess.length(); i++) {
+
                 if (wordToGuess.charAt(i) == guess.charAt(0)) {
                     newWord += guess.charAt(0);
 
-          /*  } else if (newWord.charAt(i) != '_'){
-                newWord += word.charAt(i);
+            } else if ( wordToDisplay.charAt(i) != '_'){
+                newWord += wordToGuess.charAt(i);
 
-            }*/
-                } else {
+            } else {
                     newWord += "_";
                 }
             }
 
 
-//        System.out.println(wrongGuesses);
+
 
             if (!convertWordToGuessToList().contains(guess.charAt(0))) {
                 ++wrongGuesses;
-                System.out.println(wrongGuesses);
+                System.out.println(" You have made " + wrongGuesses +
+                        " wrong guesses, guesses left: " + (Main.MaxLives - wrongGuesses));
+
+
                 if(wrongGuesses == Main.MaxLives){
-                    System.out.println("Game over!"); //parādās Game over, bet cikls neapstājas.
+                    System.out.println("Game over!");
+                    System.out.println(" Do you want to play another game? (Y/N)");
+
+                    //parādās Game over, bet cikls neapstājas.
                     //return;
                 }
 
@@ -82,7 +91,9 @@ public class GameField {
         } else {
             System.out.println(newWord);
         }
-        System.out.println(guess);
+
+        usedLetters.add(guess.charAt(0));
+        System.out.println(" You have used letters:" + usedLetters);
 
     }
 

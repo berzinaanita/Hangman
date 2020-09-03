@@ -11,7 +11,7 @@ public  class Main {
 
         GameField newGame = GameField.startNewGame();
         int wrongGuesses = newGame.getWrongGuesses();
-        List<Character> usedLetters = new ArrayList<>();
+
 
         while (wrongGuesses < MaxLives){ // cikls atkārtojas kamēr nav sasniegts max dzīvību skaits
 
@@ -22,13 +22,7 @@ public  class Main {
 
             GameField.playGame(guess, newGame);
 
-            usedLetters.add(guess.charAt(0)); // nekādi nesaprotu kāpēc šeit nesaglabājas visi ievadītie burti.
 
-
-            while(usedLetters.contains(guess)){ // ciklam vajadzētu pārbaudīt vai burts nav ievadīts atkārtoti, bet šis arī nestrādā
-                System.out.println("This letter has already been used, try again: ");
-                guess = input.next();
-            }
 
         }
 
