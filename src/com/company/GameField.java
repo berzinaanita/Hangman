@@ -13,7 +13,7 @@ public class GameField {
     private int wrongGuesses = 0;
     private String wordToGuess = game.getNewRandomWord();
     private String wordToDisplay = getWordToDisplay(wordToGuess);
-    private int guessedLetters = 0;
+
 
 
     public int getWrongGuesses() {
@@ -39,7 +39,7 @@ public class GameField {
 
     public void hangMan(String guess) {
 
- //     while (wrongGuesses <= Main.MaxLives) {
+
         var newWord = "";
 
         for (var letter:usedLetters ) {
@@ -104,12 +104,8 @@ public class GameField {
 
     }
 
-    public int checkWrongGuesses (int wrongGuesses) {
-        return wrongGuesses;
 
-    }
-
-    public List<Character> convertWordToGuessToList() { // izveidoju šo, lai dabūtu to wrongGuesses
+    public List<Character> convertWordToGuessToList() {
         char[] wordToGuessToCharArray = wordToGuess.toCharArray();
         List<Character> wordCharList = new ArrayList<>();
 
@@ -118,7 +114,7 @@ public class GameField {
         }
         return wordCharList;
     }
-//    }
+
 
 
     public static void playGame(String guess, GameField field) {
