@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public  class Main {
-    public static final int MaxLives = 7; // max dzīvību skaitu nodefinēju kā konstanti
+    public static final int MaxLives = 7;
 
     public static void main(String[] args) {
 

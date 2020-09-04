@@ -82,13 +82,8 @@ public class GameField {
 
                 if(wrongGuesses == Main.MaxLives){
                     System.out.println("Game over!  You lost!");
-                   // System.out.println(" Do you want to play another game? (Y/N)");
 
-                    //parādās Game over, bet cikls neapstājas.
-                    //return;
                 }
-
-                // un te atkarībā no nepareizo atbilžu skaita, vajadzētu vienoties klāt hangman bildem
 
             } else {
                 wordToDisplay = newWord;

@@ -31,7 +31,7 @@ public class Visual extends JFrame {
 
     public void start() {
         init();
-        this.setVisible(false);
+        this.setVisible(true);
     }
 
 
